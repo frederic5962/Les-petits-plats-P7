@@ -1,13 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <title>Mon Projet PetitsPlats</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header class="bg-header">
+      <div class="container d-flex flex-column align-items-center">
+        <div class="title-wrapper d-flex align-items-center">
+          <h1 class="title-logo">LES PETITS PLATS</h1>
+          <div class="outer-ellipse">
+            <div class="middle-ellipse">
+              <div class="inner-ellipse"></div>
+            </div>
+          </div>
+        </div>
+        <div class="search-wrapper">
+          <div class="search-input">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Rechercher une recette, un ingrédient, ..."
+              aria-label="Rechercher des recettes"
+              id="search-input"
+            />
+          </div>
+          <div class="search-button">
+            <button class="btn btn-outline-secondary" type="button" id="button-search">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
