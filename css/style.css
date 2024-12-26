@@ -1,81 +1,72 @@
-
-header {
-    width: 100%;
+.banner {
+    position: relative;
+    text-align: center;
     height: 667px;
-    background-color: aquamarine;
-    border-bottom: 1px solid #ddd;
-    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
-
-.title-wrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px; /* Ajoute un espacement sous le titre */
+.banner img {
+    width: 100%;
+    height: auto;
 }
-
-.title-logo {
-    font-size: 1.8rem; /* Ajuste la taille du texte du titre */    
-    color: rgba(255, 255, 255, 1);
-}
-
-.outer-ellipse {
-    width: 24px; /* Taille du cercle externe */
-    height: 24px;
-    background-color: white; /* Couleur blanche pour l'ellipse externe */
-    border-radius: 50%; /* Crée un cercle */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black; /* Bordure noire pour simuler l'ellipse noire */
-    margin-left: 10px; /* Ajoute un espace entre le titre et l'ellipse */
-}
-
-.middle-ellipse {
-    width: 18px; /* Taille du cercle intermédiaire */
-    height: 18px;
-    background-color: black; /* Couleur noire pour l'ellipse intermédiaire */
-    border-radius: 50%; /* Crée un cercle */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.inner-ellipse {
-    width: 12px; /* Taille du cercle interne */
-    height: 12px;
-    background-color: white; /* Couleur blanche pour l'ellipse interne */
-    border-radius: 50%; /* Crée un cercle */
-}
-
-/*barre de recherche */
-.search-wrapper {
-    position: relative;
-    display: flex;
+.header-content {
+    position: absolute;
+    top: 65%;
     left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    align-items: center;
-    top: 350px;
-    transform: translateX(-50%);
-}
-
-.search-input .form-control {
-    position: relative;
-    height: 70px; /* Hauteur de l'input */
-    width: 954px; /* Largeur de l'input, ajuste selon tes besoins */
-    border-radius: 10px; 
-}
-
-.search-button .btn {
-    position: relative;
-    right: 60px;
-    background-color: rgba(27, 27, 27, 1);
+    transform: translate(-50%, -50%);
     color: white;
-    height: 50px; /* Même hauteur que l'input */
-    padding: 0 15px;
-    border-radius: 10px; /* Bordures arrondies à droite */
+    width: 80%;
+    text-align: center;
+}
+.header-content h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 44px;
+    line-height: 66.24px;
+    align-items: center;
+    margin-bottom: 20px;
+    color: rgba(255, 209, 91, 1);
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.recherche-custom {
+    width: 80%;
+    height: 72px;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+}
+.btn-search {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-left: -40px;
+    position: relative;
+    cursor: pointer;
+}
+.btn-search img {
+    position: relative;
+    width: 51px;
+    height: 52px;
+    right: 20px;
+    display: flex;
 }
 
-.search-button .btn:hover {
-    background-color: rgba(27, 27, 27, 0.5); /* Couleur de survol pour le bouton */
+.title-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    position: relative;
+    width: 207px;
+    height: 25.26px;  
+    top: 51px;
+    left: 69px;  
 }

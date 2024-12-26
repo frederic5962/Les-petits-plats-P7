@@ -3,50 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les Petits Plats</title>
+    <!-- Bootstrap CSS -->
     <link
-      rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <title>Mon Projet PetitsPlats</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Manrope:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <header class="bg-header">
-      <div class="container d-flex flex-column align-items-center">
-        <div class="title-wrapper d-flex align-items-center">
-          <h1 class="title-logo">LES PETITS PLATS</h1>
-          <div class="outer-ellipse">
-            <div class="middle-ellipse">
-              <div class="inner-ellipse"></div>
-            </div>
-          </div>
-        </div>
-        <div class="search-wrapper">
-          <div class="search-input">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Rechercher une recette, un ingrédient, ..."
-              aria-label="Rechercher des recettes"
-              id="search-input"
-            />
-          </div>
-          <div class="search-button">
-            <button class="btn btn-outline-secondary" type="button" id="button-search">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
+    <header class="banner">
+      <img
+        src="assets/Mask group.png"
+        alt="Bannière Les Petits Plats"
+        class="img-fluid"
+      />
+      <div class="title-container">
+        <img src="assets/Logo.png" alt="logo" class="logo-img" />
+      </div>
+      <div class="header-content">
+        <h1>
+          CHERCHEZ PARMI PLUS DE 1500 RECETTES<br />DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES
+        </h1>
+        <div class="search-container">
+          <input
+            type="text"
+            class="form-control recherche-custom"
+            placeholder="Rechercher une recette, un ingrédient..."
+          />
+          <button class="btn btn-search">
+            <img src="assets/Property 1=Default.png" alt="Recherche" />
+          </button>
         </div>
       </div>
     </header>
 
+    <!-- Bootstrap JS and dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
   </body>
 </html>
