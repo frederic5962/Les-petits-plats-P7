@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const recipeCardsContainer = document.getElementById('recipe-cards');
+  
+  const recipeCardsDisplay = document.getElementById('recipe-cards');
 
-  if (typeof recipes !== 'undefined') {
+  if (!(typeof recipes === 'undefined')) {
     recipes.forEach(recipeData => {
       const card = document.createElement('div');
       card.className = 'card';
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 </div>
             `;
-      recipeCardsContainer.appendChild(card);
+      recipeCardsDisplay.appendChild(card);
     });
   } else {
     console.error('Les données de recettes ne sont pas disponibles.');
