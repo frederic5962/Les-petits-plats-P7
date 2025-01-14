@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
         recipeCardsDisplay.appendChild(card);
       });
     }
-
     updateRecipeCount(searchResults.length); // Mettre à jour le compteur de recettes
   }
 
@@ -60,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const searchResults = linearSearch(recipes, searchValue);
       displaySearchResults(searchResults);
        searchBar.value = ''; // Effacer l'entrée de la barre de recherche après validation
-      searchBar.blur(); // Enlever le focus de la barre de recherche pour une meilleure UX 
+      searchBar.blur(); // Enlever le focus de la barre de recherche
     } else {
       // Réafficher toutes les recettes si la recherche est trop courte
       recipeCardsDisplay.innerHTML = '';
@@ -68,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const card = createRecipeCard(recipeData);
         recipeCardsDisplay.appendChild(card);
       });
-
       updateRecipeCount(recipes.length); // Mettre à jour le compteur de recettes
     }
   }
@@ -79,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const card = createRecipeCard(recipeData);
       recipeCardsDisplay.appendChild(card);
     });
-
     updateRecipeCount(recipes.length); // Mettre à jour le compteur de recettes au démarrage
   } else {
     console.error('Les données de recettes ne sont pas disponibles.');
