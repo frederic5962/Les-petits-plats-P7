@@ -57,13 +57,11 @@
           Ingrédients
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <input
-            type="text"
-            class="form-control dropdown-search"
-            placeholder="..."
-          />
+          <input type="text" class="form-control dropdown-search" placeholder="..." />
+          <ul id="ingredients-tags" class="tags-list"></ul>
         </div>
       </div>
+
       <div class="dropdown">
         <button
           class="btn dropdown-toggle"
@@ -76,11 +74,7 @@
           Appareils
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-          <input
-            type="text"
-            class="form-control dropdown-search"
-            placeholder="..."
-          />
+          <input type="text" class="form-control dropdown-search" placeholder="..." />
         </div>
       </div>
       <div class="dropdown">
@@ -95,23 +89,19 @@
           Ustensiles
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-          <input
-            type="text"
-            class="form-control dropdown-search"
-            placeholder="..."
-          />
+          <input type="text" class="form-control dropdown-search" placeholder="..." />
         </div>
       </div>
       <div class="recipe-count">recettes</div>
     </main>
 
-    <section id="recipe-cards"  class="recipe-cards"></section>
+    <section id="recipe-cards" class="recipe-cards"></section>
 
-    <!-- Bootstrap JS and dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="data/recipes.js"></script>
+    <script type="module" src="js/script.js" defer></script>
+
     <script type="module" src="js/script.js" defer></script>
   </body>
 </html>

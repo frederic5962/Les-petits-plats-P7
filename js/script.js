@@ -1,10 +1,17 @@
 import linearSearch from '../js/searchLinear.js';
 import { updateRecipeCount } from '../utils/updateCount.js';
+import  {getUniqueIngredients, ajouterTags}  from '../js/tags.js';
+import { recipes } from '../data/recipes.js';
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const recipeCardsDisplay = document.getElementById('recipe-cards');
   const searchBar = document.querySelector('.recherche-custom');
   const searchButton = document.querySelector('.btn-search');
+
+  // Ajouter les tags des ingrédients
+  const tagsIngredients = getUniqueIngredients();
+  ajouterTags("ingredients-tags", tagsIngredients);
 
   // Fonction pour créer une carte de recette
   function createRecipeCard(recipeData) {
@@ -58,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (searchValue.length >= 3) {
       const searchResults = linearSearch(recipes, searchValue);
       displaySearchResults(searchResults);
-       searchBar.value = ''; // Effacer l'entrée de la barre de recherche après validation
+      searchBar.value = ''; // Effacer l'entrée de la barre de recherche après validation
       searchBar.blur(); // Enlever le focus de la barre de recherche
     } else {
       // Réafficher toutes les recettes si la recherche est trop courte

@@ -112,10 +112,15 @@ body {
 }
 
 .dropdown .dropdown-menu {
+  display: none; /* Par défaut, le menu est caché */
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px;
+}
+
+.dropdown.show .dropdown-menu {
+  display: block; /* Afficher le menu quand il est ouvert */
 }
 
 .dropdown .dropdown-menu .dropdown-item {
@@ -133,6 +138,23 @@ body {
 .dropdown-search {
   margin-bottom: 10px;
   border-radius: 5px;
+}
+
+/* Styles pour les tags dans le sous-menu */
+.tags-list {
+  list-style-type: none; /* Supprimer les puces par défaut */
+  padding: 0;
+  margin: 0;
+}
+
+.tags-list li {
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tags-list li:hover {
+  background-color: #f1f1f1; /* Ajouter un effet de survol */
 }
 
 /* Style pour le conteneur de recette */
@@ -158,15 +180,15 @@ body {
   width: 380px;
   border-radius: 21px;
   opacity: 0.8;
-  overflow: hidden; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  transition: transform 0.3s ease; 
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
   background-color: #fff;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .card:hover {
-  transform: translateY(-10px); 
+  transform: translateY(-10px);
 }
 
 .image-container {
@@ -178,7 +200,7 @@ body {
 .card-img-top {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .card-time {
@@ -240,7 +262,7 @@ body {
 
 .ingredient-item {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .ingredient-name {
