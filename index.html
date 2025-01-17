@@ -1,107 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Les Petits Plats</title>
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Manrope:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header class="banner">
-      <img
-        src="assets/Mask group.png"
-        alt="Bannière Les Petits Plats"
-        class="img-fluid"
-      />
-      <div class="title-container">
-        <img src="assets/Logo.png" alt="logo" class="logo-img" />
-      </div>
-      <div class="header-content">
-        <h1>
-          CHERCHEZ PARMI PLUS DE 1500 RECETTES<br />DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES
-        </h1>
-        <div class="search-container">
-          <input
-            type="text"
-            class="form-control recherche-custom"
-            placeholder="Rechercher une recette, un ingrédient..."
-          />
-          <button class="btn btn-search">
-            <img src="assets/Search.png" alt="Recherche" />
-          </button>
-        </div>
-      </div>
-    </header>
 
-    <main class="dropdown-container">
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton1"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Ingrédients
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les Petits Plats</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Manrope:wght@500&display=swap"
+    rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="banner">
+    <img src="assets/Mask group.png" alt="Bannière Les Petits Plats" class="img-fluid" />
+    <div class="title-container">
+      <img src="assets/Logo.png" alt="logo" class="logo-img" />
+    </div>
+    <div class="header-content">
+      <h1>
+        CHERCHEZ PARMI PLUS DE 1500 RECETTES<br />DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES
+      </h1>
+      <div class="search-container">
+        <input type="text" class="form-control recherche-custom"
+          placeholder="Rechercher une recette, un ingrédient..." />
+        <button class="btn btn-search">
+          <img src="assets/Search.png" alt="Recherche" />
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <input type="text" class="form-control dropdown-search" placeholder="..." />
-          <ul id="ingredients-tags" class="tags-list"></ul>
-        </div>
       </div>
+    </div>
+  </header>
 
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton2"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Appareils
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-          <input type="text" class="form-control dropdown-search" placeholder="..." />
-        </div>
+  <main class="dropdown-container">
+    <div class="dropdown">
+      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Ingrédients
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <input type="text" class="form-control dropdown-search" placeholder="..." />
+        <ul id="ingredients-tags" class="tags-list"></ul>
       </div>
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton3"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Ustensiles
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-          <input type="text" class="form-control dropdown-search" placeholder="..." />
-        </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Appareils
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+        <input type="text" class="form-control dropdown-search" placeholder="..." />
+        <ul id="appareils-tags" class="tags-list"></ul>
       </div>
-      <div class="recipe-count">recettes</div>
-    </main>
+    </div>
+    <div class="dropdown">
+      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Ustensiles
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+        <input type="text" class="form-control dropdown-search" placeholder="..." />
+        <ul id="ustensiles-tags" class="tags-list"></ul>
+      </div>
+    </div>
+    <div class="recipe-count">recettes</div>
+  </main>
 
-    <section id="recipe-cards" class="recipe-cards"></section>
+  <section id="recipe-cards" class="recipe-cards"></section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script type="module" src="js/script.js" defer></script>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="module" src="js/script.js" defer></script>
+</body>
 
-    <script type="module" src="js/script.js" defer></script>
-  </body>
 </html>

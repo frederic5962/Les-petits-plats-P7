@@ -1,8 +1,12 @@
 import linearSearch from '../js/searchLinear.js';
 import { updateRecipeCount } from '../utils/updateCount.js';
-import  {getUniqueIngredients, ajouterTags}  from '../js/tags.js';
+import {
+  getUniqueIngredients,
+  getUniqueAppareils,
+  getUniqueUstensiles,
+  ajouterTags,
+} from '../js/tags.js';
 import { recipes } from '../data/recipes.js';
-
 
 document.addEventListener('DOMContentLoaded', function () {
   const recipeCardsDisplay = document.getElementById('recipe-cards');
@@ -11,7 +15,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Ajouter les tags des ingrédients
   const tagsIngredients = getUniqueIngredients();
-  ajouterTags("ingredients-tags", tagsIngredients);
+  ajouterTags('ingredients-tags', tagsIngredients);
+
+  // Ajouter les tags des appareils
+  const tagsAppareils = getUniqueAppareils();
+  ajouterTags('appareils-tags', tagsAppareils);
+
+  // Ajouter les tags des ustensiles
+  const tagsUstensiles = getUniqueUstensiles();
+  ajouterTags('ustensiles-tags', tagsUstensiles);
 
   // Fonction pour créer une carte de recette
   function createRecipeCard(recipeData) {
@@ -19,7 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
     card.className = 'card';
     card.innerHTML = `
       <div class="image-container">
-        <img src="assets/medias/${recipeData.image}" class="card-img-top" alt="${recipeData.name}">
+        <img src="assets/medias/${recipeData.image}" class="card-img-top" alt="${
+      recipeData.name
+    }">
         <p class="card-time">${recipeData.time}min</p>
       </div>
       <div class="card-body">
@@ -28,12 +42,20 @@ document.addEventListener('DOMContentLoaded', function () {
         <p class="card-recipe">${recipeData.description}</p>
         <div class="card-ingredients-title">INGRÉDIENTS</div>
         <div class="card-ingredients">
-          ${recipeData.ingredients.map(ingredient => `
+          ${recipeData.ingredients
+            .map(
+              ingredient => `
             <div class="ingredient-item">
               <div class="ingredient-name">${ingredient.ingredient}</div>
-              <div class="ingredient-quantity">${ingredient.quantity ? `${ingredient.quantity} ${ingredient.unit || ''}` : ''}</div>
+              <div class="ingredient-quantity">${
+                ingredient.quantity
+                  ? `${ingredient.quantity} ${ingredient.unit || ''}`
+                  : ''
+              }</div>
             </div>
-          `).join('')}
+          `
+            )
+            .join('')}
         </div>
       </div>
     `;

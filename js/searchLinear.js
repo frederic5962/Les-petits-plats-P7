@@ -1,4 +1,3 @@
-// searchLinear.js
 function linearSearch(recipes, searchTerm) {
   const results = [];
   const lowerCaseSearchTerm = searchTerm.toLowerCase();
