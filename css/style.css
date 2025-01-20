@@ -112,10 +112,18 @@ body {
 }
 
 .dropdown .dropdown-menu {
+  display: none; /* Par défaut, le menu est caché */
   background-color: #ffffff;
-  border-radius: 5px;
+  border-radius: 11px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 0px;
+  max-height: 300px; /* Limiter la hauteur maximale */
+  overflow-y: auto; /* Ajouter un défilement vertical si nécessaire */
+  overflow-x: hidden; /* Masquer le scroll horizontal */
+}
+
+.dropdown.show .dropdown-menu {
+  display: block; /* Afficher le menu quand il est ouvert */
 }
 
 .dropdown .dropdown-menu .dropdown-item {
@@ -130,9 +138,84 @@ body {
   background-color: #f1f1f1;
 }
 
+/* Conteneur de la barre de recherche dans le sous-menu */
+.dropdown-search-container {
+  position: relative;
+  width: 100%;
+  margin: 15px 10px 5px 10px;
+}
+
 .dropdown-search {
-  margin-bottom: 10px;
-  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  padding-right: 35px; /* Ajouter un espace pour l'icône de la loupe */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn-search-inside {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-search-inside img {
+  width: 20px; /* Ajuster la taille de l'icône si nécessaire */
+  height: 20px; /* Ajuster la taille de l'icône si nécessaire */
+}
+
+/* Ajouter les styles pour la croix de réinitialisation */
+.btn-clear-search {
+  position: absolute;
+  top: 50%;
+  right: 35px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-clear-search img {
+  width: 20px; /* Ajuster la taille de l'icône si nécessaire */
+  height: 20px; /* Ajuster la taille de l'icône si nécessaire */
+}
+
+/* Styles pour les tags dans le sous-menu */
+.tags-list {
+  list-style-type: none; /* Supprimer les puces par défaut */
+  padding: 0;
+  margin: 0;
+}
+
+.tags-list li {
+  padding: 5px 0px 5px 0px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tags-list li:hover {
+  background-color: rgba(255, 209, 91, 1); /* Ajouter un effet de survol */
+}
+
+.tags-list li a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  padding: 5px 16px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Style pour le conteneur de recette */
@@ -158,15 +241,15 @@ body {
   width: 380px;
   border-radius: 21px;
   opacity: 0.8;
-  overflow: hidden; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  transition: transform 0.3s ease; 
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
   background-color: #fff;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .card:hover {
-  transform: translateY(-10px); 
+  transform: translateY(-10px);
 }
 
 .image-container {
@@ -178,7 +261,7 @@ body {
 .card-img-top {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .card-time {
@@ -240,7 +323,7 @@ body {
 
 .ingredient-item {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .ingredient-name {
