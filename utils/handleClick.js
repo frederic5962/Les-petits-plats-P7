@@ -1,4 +1,4 @@
-import { performRecipeSearch } from '../utils/popResult.js';
+import { performRecipeSearch } from './popResult.js';
 
 // Déclaration d'un objet global pour stocker les tags sélectionnés
 export const selectedTags = {
@@ -7,12 +7,18 @@ export const selectedTags = {
   ustensiles: [],
 };
 
-// Fonction pour gérer la sélection des tags
+/**
+ * Gère la sélection des tags.
+ * @param {string} tag Le tag sélectionné.
+ * @param {string} category La catégorie du tag ('1' pour les ingrédients, '2' pour les appareils, '3' pour les ustensiles).
+ */
 export function handleSelectionClick(tag, category) {
-  console.log(`Tag cliqué: ${tag}, Catégorie: ${category}`);
+  // Convertit la catégorie en string si nécessaire
   if (typeof category === 'number') {
     category = category.toString();
   }
+
+  // Ajoute ou supprime le tag de la liste des tags sélectionnés en fonction de la catégorie
   if (category === '1') {
     toggleTag(selectedTags.ingredients, tag);
   } else if (category === '2') {
@@ -20,37 +26,51 @@ export function handleSelectionClick(tag, category) {
   } else if (category === '3') {
     toggleTag(selectedTags.ustensiles, tag);
   }
-  displaySelectedTags(); // Afficher les tags sélectionnés
+
+  // Met à jour l'affichage des tags sélectionnés
+  displaySelectedTags();
 }
 
-// Fonction pour ajouter ou supprimer un tag de la liste
+/**
+ * Ajoute ou supprime un tag de la liste.
+ * @param {string} tagList La liste des tags.
+ * @param {string} tag Le tag à ajouter ou supprimer.
+ */
 function toggleTag(tagList, tag) {
   const index = tagList.indexOf(tag);
   if (index === -1) {
+    // Ajoute le tag s'il n'existe pas déjà
     tagList.push(tag);
   } else {
-    tagList.splice(index, 1); // Supprimer le tag s'il existe déjà dans la liste
+    // Supprime le tag s'il existe déjà
+    tagList.splice(index, 1);
   }
-  console.log(selectedTags);
+
+  // Met à jour les résultats de la recherche
   performRecipeSearch();
 }
 
-// Fonction pour afficher les tags sélectionnés sous le menu
+/**
+ * Affiche les tags sélectionnés sous le menu.
+ */
 function displaySelectedTags() {
   const selectedTagsContainer = document.querySelector('.selected-tags-container');
-  selectedTagsContainer.innerHTML = '';
+  selectedTagsContainer.innerHTML = ''; // Efface les tags précédents
 
-  // Afficher les tags pour chaque catégorie
+  // Parcourt les catégories de tags
   Object.keys(selectedTags).forEach(category => {
+    // Parcourt les tags sélectionnés pour chaque catégorie
     selectedTags[category].forEach(tag => {
+      // Crée un élément pour le tag
       const tagElement = document.createElement('div');
       tagElement.className = 'tag';
 
-      // Ajouter un <span> pour le texte du tag
+      // Ajoute un <span> pour le texte du tag
       const tagText = document.createElement('span');
       tagText.className = 'tag-text';
       tagText.textContent = tag;
 
+      // Crée un bouton pour supprimer le tag
       const closeButton = document.createElement('span');
       closeButton.className = 'close';
       closeButton.textContent = '×';
@@ -58,19 +78,28 @@ function displaySelectedTags() {
         removeSelectedTag(tag, category);
       };
 
-      tagElement.appendChild(tagText); // Ajouter le texte du tag au conteneur du tag
+      // Ajoute le texte du tag et le bouton de suppression à l'élément du tag
+      tagElement.appendChild(tagText);
       tagElement.appendChild(closeButton);
+
+      // Ajoute l'élément du tag au conteneur des tags sélectionnés
       selectedTagsContainer.appendChild(tagElement);
     });
   });
 }
 
-// Fonction pour retirer un tag sélectionné et réinitialiser les résultats
+/**
+ * Retire un tag sélectionné et met à jour les résultats de la recherche.
+ * @param {string} tag Le tag à retirer.
+ * @param {string} category La catégorie du tag.
+ */
 function removeSelectedTag(tag, category) {
-  // Retirer le tag de la catégorie correspondante
+  // Retire le tag de la liste des tags sélectionnés
   toggleTag(selectedTags[category], tag);
 
-  // Réinitialiser les résultats de recherche
+  // Met à jour les résultats de la recherche
   performRecipeSearch();
-  displaySelectedTags(); // Mettre à jour l'affichage des tags sélectionnés
+
+  // Met à jour l'affichage des tags sélectionnés
+  displaySelectedTags();
 }
