@@ -1,3 +1,4 @@
+// Importations nécessaires
 import { selectedTags } from '../utils/handleClick.js';
 import { updateRecipeCount } from '../utils/updateCount.js';
 import {
@@ -7,10 +8,10 @@ import {
   ajouterTags,
 } from '../utils/tags.js';
 import { recipes } from '../data/recipes.js';
+import { performRecipeSearch, filterRecipesByTags } from '../utils/popResult.js';
 import { handleSelectionClick } from '../utils/handleClick.js';
-import { displaySearchResults } from '../components/recipeCard.js';
+import { createRecipeCard, displaySearchResults } from '../components/recipeCard.js';
 
-// Fonction principale
 document.addEventListener('DOMContentLoaded', function () {
   const recipeCardsDisplay = document.getElementById('recipe-cards');
 
@@ -19,7 +20,83 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  // Initialisation des tags
+  // Fonction de recherche principale
+  function performMainSearch(searchTerm, exactMatch = false) {
+    let searchResults = filterRecipesByTags(recipes, selectedTags);
+    searchResults = searchResults.filter(recipe => {
+      const nameMatch = exactMatch
+        ? recipe.name.toLowerCase().includes(searchTerm)
+        : recipe.name.toLowerCase().includes(searchTerm);
+      const descriptionMatch = exactMatch
+        ? recipe.description.toLowerCase().includes(searchTerm)
+        : recipe.description.toLowerCase().includes(searchTerm);
+      const ingredientsMatch = recipe.ingredients.some(ingredient =>
+        exactMatch
+          ? ingredient.ingredient.toLowerCase().includes(searchTerm)
+          : ingredient.ingredient.toLowerCase().includes(searchTerm)
+      );
+      return nameMatch || descriptionMatch || ingredientsMatch;
+    });
+    displaySearchResults(searchResults);
+  }
+
+  const mainSearchBar = document.querySelector('.recherche-custom');
+  const clearButton = document.querySelector('.clear-button');
+  const searchButton = document.querySelector('.btn-search');
+  const subSearchButtons = document.querySelectorAll('.btn-search-inside'); // Boutons de recherche dans les sous-menus
+
+  // Fonction pour afficher/masquer le bouton "X" en fonction de la saisie
+  mainSearchBar.addEventListener('input', () => {
+    const searchTerm = mainSearchBar.value.trim().toLowerCase();
+    clearButton.style.display = searchTerm !== '' ? 'block' : 'none';
+  });
+
+  // Fonction pour effacer la saisie dans la barre de recherche
+  clearButton.addEventListener('click', () => {
+    mainSearchBar.value = '';
+    clearButton.style.display = 'none'; // Masquer le bouton après effacement
+    resetSearchResults(); // Réinitialiser les recettes et le compteur
+  });
+
+  // Ajouter un écouteur d'événements au bouton "Rechercher" pour valider la recherche lorsqu'il est cliqué
+  searchButton.addEventListener('click', () => {
+    const searchTerm = mainSearchBar.value.trim().toLowerCase();
+    performMainSearch(searchTerm, false);
+  });
+
+  // Ajouter un écouteur d'événements pour valider la recherche avec la touche "Entrée"
+  mainSearchBar.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Empêcher la soumission par défaut du formulaire
+      const searchTerm = mainSearchBar.value.trim().toLowerCase();
+      performMainSearch(searchTerm, false);
+    }
+  });
+
+  // Ajouter des écouteurs d'événements aux boutons de recherche des sous-menus
+  subSearchButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const subMenu = button.closest('.dropdown-menu');
+      const input = subMenu.querySelector('.dropdown-search');
+      const searchTerm = input.value.trim().toLowerCase();
+      performMainSearch(searchTerm, false); // Autoriser une recherche par mots-clés pour des résultats plus larges
+    });
+  });
+
+  // Ajouter un écouteur d'événements pour valider la recherche avec la touche "Entrée" dans les sous-menus
+  const subSearchInputs = document.querySelectorAll('.dropdown-search');
+  subSearchInputs.forEach(input => {
+    input.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Empêcher la soumission par défaut du formulaire
+        const searchTerm = input.value.trim().toLowerCase();
+        performMainSearch(searchTerm, false); // Autoriser une recherche par mots-clés pour des résultats plus larges
+      }
+    });
+  });
+
+  clearButton.style.display = 'none'; // Masquer le bouton par défaut
+
   const tagsIngredients = getUniqueIngredients().sort();
   const tagsAppareils = getUniqueAppareils().sort();
   const tagsUstensiles = getUniqueUstensiles().sort();
@@ -28,87 +105,43 @@ document.addEventListener('DOMContentLoaded', function () {
   ajouterTags('appareils-tags', tagsAppareils);
   ajouterTags('ustensiles-tags', tagsUstensiles);
 
-  // Affichage initial des recettes
-  displaySearchResults(recipes);
-  updateRecipeCount(recipes.length);
+  performRecipeSearch();
 
-  // Gestion de la recherche principale
-  const mainSearchInput = document.getElementById('main-search');
-  const mainClearButton = document.querySelector('.btn-clear-main');
-
-  if (mainSearchInput) {
-    mainSearchInput.addEventListener('input', performMainSearch);
-    mainSearchInput.addEventListener('input', function () {
-      mainClearButton.style.display = mainSearchInput.value.trim() !== '' ? 'block' : 'none';
-    });
-  } else {
-    console.error("L'élément 'main-search' n'a pas été trouvé.");
-  }
-
-  // Gestion du bouton "Effacer" de la recherche principale
-  if (mainClearButton) {
-    mainClearButton.addEventListener('click', function () {
-      mainSearchInput.value = '';
-      mainSearchInput.dispatchEvent(new Event('input')); // Déclencher la recherche
-      resetSearchResults();
-    });
-    mainClearButton.style.display = 'none'; // Masquer le bouton au départ
-  }
-
-  // Gestion de la recherche dans les sous-menus
-  document.querySelectorAll('.dropdown-search').forEach(input => {
-    input.addEventListener('input', validateSubMenuSearch);
-  });
-
-  // Gestion des boutons "Effacer" dans les sous-menus
   const searchInputs = document.querySelectorAll('.dropdown-search');
   const clearButtons = document.querySelectorAll('.btn-clear-search');
 
   searchInputs.forEach((input, index) => {
     const clearButton = clearButtons[index];
-
-    input.addEventListener('input', function () {
+    input.addEventListener('input', () => {
       clearButton.style.display = input.value.trim() !== '' ? 'block' : 'none';
+      validateSubMenuSearch(input); // Appel de la fonction de validation pour chaque saisie
     });
 
-    clearButton.addEventListener('click', function () {
+    clearButton.addEventListener('click', () => {
       input.value = '';
+      clearButton.style.display = 'none'; // Masquer le bouton après effacement
       input.dispatchEvent(new Event('input'));
       resetSearchResults();
     });
 
-    clearButton.style.display = 'none';
+    clearButton.style.display = 'none'; // Masquer le bouton par défaut
   });
 
-  // Fonctions pour la recherche
-  function performMainSearch() {
-    const searchTerm = mainSearchInput.value.trim().toLowerCase();
-    const searchResults = recipes.filter(recipe => {
-      const nameMatch = recipe.name.toLowerCase().includes(searchTerm);
-      const descriptionMatch = recipe.description.toLowerCase().includes(searchTerm);
-      const ingredientsMatch = recipe.ingredients.some(ing =>
-        ing.ingredient.toLowerCase().includes(searchTerm)
-      );
-      return nameMatch || descriptionMatch || ingredientsMatch;
-    });
-    displaySearchResults(searchResults);
-  }
-
-  function validateSubMenuSearch(event) {
-    const searchTerm = event.target.value.trim().toLowerCase();
-    const subMenu = event.target.closest('.dropdown-menu');
+  function validateSubMenuSearch(input) {
+    const searchTerm = input.value.trim().toLowerCase();
+    const subMenu = input.closest('.dropdown-menu');
     const tagsList = subMenu.querySelector('.tags-list');
-    const category = subMenu.dataset.category;
+    const category = subMenu
+      .getAttribute('aria-labelledby')
+      ?.replace('dropdownMenuButton', '');
 
-    const tagsData = {
-      '1': tagsIngredients,
-      '2': tagsAppareils,
-      '3': tagsUstensiles,
-    };
-    const sortedTags = tagsData[category];
+    let sortedTags;
+    if (category === '1') sortedTags = getUniqueIngredients();
+    else if (category === '2') sortedTags = getUniqueAppareils();
+    else if (category === '3') sortedTags = getUniqueUstensiles();
 
     if (!sortedTags) {
-      console.error('Tags triés non trouvés pour la catégorie :', category);
+      console.error('Tags triés sont undefined pour la catégorie:', category);
       return;
     }
 
@@ -116,36 +149,40 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchResults = sortedTags.filter(tag => regex.test(tag));
 
     tagsList.innerHTML = '';
-
     searchResults.forEach(tag => {
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.href = '#';
       a.textContent = tag;
-      a.setAttribute('aria-label', `Sélectionner le tag ${tag}`);
-
-      a.addEventListener('click', function (event) {
+      a.addEventListener('click', event => {
         event.preventDefault();
         handleSelectionClick(tag, category);
-        event.target.value = '';
+        input.value = '';
+        validateSubMenuSearch(input); // Réinitialiser les résultats après sélection
       });
-
       li.appendChild(a);
       tagsList.appendChild(li);
     });
   }
 
-  // Fonction pour réinitialiser les résultats de recherche
   function resetSearchResults() {
     selectedTags.ingredients = [];
     selectedTags.appareils = [];
     selectedTags.ustensiles = [];
-
     displaySearchResults(recipes);
     updateRecipeCount(recipes.length);
+    console.log(
+      'Recherche réinitialisée, tous les tags sélectionnés ont été effacés et toutes les recettes sont affichées.'
+    );
+  }
 
-    searchInputs.forEach(input => {
-      input.value = '';
+  if (recipes) {
+    recipes.forEach(recipeData => {
+      const card = createRecipeCard(recipeData);
+      recipeCardsDisplay.appendChild(card);
     });
+    updateRecipeCount(recipes.length);
+  } else {
+    console.error('Les données de recettes ne sont pas disponibles.');
   }
 });

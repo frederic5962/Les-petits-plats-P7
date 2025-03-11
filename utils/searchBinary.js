@@ -1,37 +1,33 @@
-/**
- * Effectue une recherche binaire dans un tableau trié.
- * @param {string} sortedArray Le tableau trié dans lequel effectuer la recherche.
- * @param {string} searchTerm Le terme à rechercher.
- * @returns {string} Un tableau contenant les éléments correspondants.
- */
 export function trieParDivion(sortedArray, searchTerm) {
-  console.log(sortedArray);
+  console.log('trieParDivion appelé', sortedArray, searchTerm);
+
   const results = [];
-  let left = 0;
-  let right = sortedArray.length - 1;
+  let left = 0; // 1er élément du tableau
+  let right = sortedArray.length - 1; // Fin du tableau
   const lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+  const addMatchingElements = (index) => {
+    while (index >= left && index <= right && sortedArray[index].toLowerCase().startsWith(lowerCaseSearchTerm)) {
+      results.push(sortedArray[index]);
+      index++;
+    }
+  };
 
   while (left <= right) {
     const mid = Math.floor((left + right) / 2);
     const midValue = sortedArray[mid].toLowerCase();
+
+    console.log('Comparaison en cours avec midValue', midValue);
 
     if (midValue.startsWith(lowerCaseSearchTerm)) {
       // Ajoute l'élément correspondant
       results.push(sortedArray[mid]);
 
       // Vérifie les éléments voisins pour des correspondances
-      let i = mid - 1;
-      while (i >= left && sortedArray[i].toLowerCase().startsWith(lowerCaseSearchTerm)) {
-        results.push(sortedArray[i]);
-        i--;
-      }
+      addMatchingElements(mid - 1);
+      addMatchingElements(mid + 1);
 
-      i = mid + 1;
-      while (i <= right && sortedArray[i].toLowerCase().startsWith(lowerCaseSearchTerm)) {
-        results.push(sortedArray[i]);
-        i++;
-      }
-
+      console.log('Éléments trouvés:', results);
       return results; // Retourne tous les éléments correspondants
     } else if (midValue < lowerCaseSearchTerm) {
       left = mid + 1;
@@ -40,6 +36,6 @@ export function trieParDivion(sortedArray, searchTerm) {
     }
   }
 
+  console.log('Aucun élément trouvé');
   return results;
 }
-  

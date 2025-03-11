@@ -1,7 +1,7 @@
 import { updateRecipeCount } from '../utils/updateCount.js';
 
 export function displaySearchResults(searchResults) {
-  const recipeCardsDisplay = document.getElementById('recipe-cards'); 
+  const recipeCardsDisplay = document.getElementById('recipe-cards');
   recipeCardsDisplay.innerHTML = '';
 
   if (searchResults.length === 0) {
@@ -22,7 +22,7 @@ export function createRecipeCard(recipeData) {
   card.className = 'card';
   card.innerHTML = `
     <div class="image-container">
-      <img src="assets/medias/${recipeData.image}" class="card-img-top" alt="${recipeData.name}">
+      <img src="assets/medias/${recipeData.image}" class="card-img-top" alt="${recipeData.name}" onerror="this.onerror=null; this.src='assets/placeholder.png';">
       <p class="card-time">${recipeData.time}min</p>
     </div>
     <div class="card-body">
@@ -31,17 +31,21 @@ export function createRecipeCard(recipeData) {
       <p class="card-recipe">${recipeData.description}</p>
       <div class="card-ingredients-title">INGRÉDIENTS</div>
       <div class="card-ingredients">
-        ${recipeData.ingredients
-          .map(
-            ingredient => `
-          <div class="ingredient-item">
-            <div class="ingredient-name">${ingredient.ingredient}</div>
-            <div class="ingredient-quantity">${ingredient.quantity ? `${ingredient.quantity} ${ingredient.unit || ''}` : ''}</div>
-          </div>`
-          )
-          .join('')}
+        ${generateIngredientsList(recipeData.ingredients)}
       </div>
     </div>
   `;
   return card;
+}
+
+function generateIngredientsList(ingredients) {
+  return ingredients
+    .map(
+      ingredient => `
+      <div class="ingredient-item">
+        <div class="ingredient-name">${ingredient.ingredient}</div>
+        <div class="ingredient-quantity">${ingredient.quantity ? `${ingredient.quantity} ${ingredient.unit || ''}` : ''}</div>
+      </div>`
+    )
+    .join('');
 }
