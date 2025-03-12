@@ -30,6 +30,10 @@ export function getUniqueUstensiles() {
 
 export function ajouterTags(idElement, tags) {
   const ul = document.getElementById(idElement);
+  if (!ul) {
+    console.error(`Element with ID "${idElement}" not found.`);
+    return;
+  }
   tags.forEach(tag => {
     const li = document.createElement('li');
     const a = document.createElement('a');
@@ -37,5 +41,17 @@ export function ajouterTags(idElement, tags) {
     a.textContent = tag;
     li.appendChild(a);
     ul.appendChild(li);
+
+    a.addEventListener('click', function (event) {
+      event.preventDefault();
+      const tag = this.textContent;
+      const dropdownMenu = this.closest('.dropdown-menu');
+      const category = dropdownMenu
+        ? dropdownMenu.getAttribute('data-category')
+        : undefined;
+      handleSelectionClick(tag, category); // Assurer que handleSelectionClick est utilisé ici
+      a.setAttribute('aria-label', `Sélectionner le tag ${tag}`);
+    });
   });
+  console.log(`Tags ajoutés à l'élément avec ID: ${idElement}`, tags);
 }
