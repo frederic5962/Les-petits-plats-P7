@@ -1,0 +1,67 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram name="Page-1" id="heSsBMUi8BRGPO317RQd">
+    <mxGraphModel dx="1098" dy="688" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yDuB1jYPjzLIYw8vX6S7-1" target="yDuB1jYPjzLIYw8vX6S7-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Debut&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="70" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yDuB1jYPjzLIYw8vX6S7-3" target="yDuB1jYPjzLIYw8vX6S7-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Initialiser&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Definir (arr) et&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;element de recherche (x)&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="65" width="156" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yDuB1jYPjzLIYw8vX6S7-4" target="yDuB1jYPjzLIYw8vX6S7-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yDuB1jYPjzLIYw8vX6S7-4" target="yDuB1jYPjzLIYw8vX6S7-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Si element courant&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;= x&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354.5" y="240" width="167" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yDuB1jYPjzLIYw8vX6S7-5" target="yDuB1jYPjzLIYw8vX6S7-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-5" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;elemnt trouvé&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;à l&#39;indice i&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-6" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Fin&amp;nbsp;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="450" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yDuB1jYPjzLIYw8vX6S7-11" target="yDuB1jYPjzLIYw8vX6S7-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-11" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Sinon&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;continuer la boucle&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yDuB1jYPjzLIYw8vX6S7-12" target="yDuB1jYPjzLIYw8vX6S7-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-12" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Fin&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;element non trouvé&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="505" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yDuB1jYPjzLIYw8vX6S7-19" target="yDuB1jYPjzLIYw8vX6S7-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-19" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Fin de boucle&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-20" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Fin&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="505" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-24" value="&lt;br&gt;&lt;li&gt;&lt;p&gt;&lt;span&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;strong&gt;Début :&lt;/strong&gt; L&#39;algorithme commence ici.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;span&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Initialisation :&lt;/strong&gt; Définir le tableau &lt;code&gt;arr&lt;/code&gt; et l&#39;élément à rechercher &lt;code&gt;x&lt;/code&gt;.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;span&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Boucle :&lt;/strong&gt; Parcourir chaque élément du tableau.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;span&gt;&lt;strong&gt;&lt;font size=&quot;3&quot;&gt;Condition de Milieu :&lt;/font&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;span&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Si l&#39;élément courant == x :&lt;/strong&gt; Afficher &#39;Élément trouvé à l&#39;indice i&#39;.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;span&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Sinon :&lt;/strong&gt; Continuer la boucle.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;span&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Fin de Boucle :&lt;/strong&gt; Si l&#39;élément n&#39;est pas trouvé après avoir parcouru le tableau.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;span&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Fin :&lt;/strong&gt; L&#39;algorithme se termine ici.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="70" y="730" width="430" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="yDuB1jYPjzLIYw8vX6S7-25" value="ALGO LINEAIRE" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="610" width="210" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

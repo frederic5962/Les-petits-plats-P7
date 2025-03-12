@@ -1,0 +1,91 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram name="Page-1" id="mhID_GZyGquVJNiwSWMZ">
+    <mxGraphModel dx="1098" dy="688" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="La70J7QoOkvSCo4yw8PW-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="La70J7QoOkvSCo4yw8PW-1" target="La70J7QoOkvSCo4yw8PW-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-1" value="Début" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" y="68" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="La70J7QoOkvSCo4yw8PW-2" target="Mpkx7S8dqKNba20j9ynK-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-2" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Initialiser&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Gauche (0)&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Droite = (taille de tableau -1)&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="58" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="La70J7QoOkvSCo4yw8PW-4" target="La70J7QoOkvSCo4yw8PW-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Calculer : Milieu&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;code&gt;milieu = (gauche + droite) / 2&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="567.5" y="250" width="195" height="82.5" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="La70J7QoOkvSCo4yw8PW-7" target="La70J7QoOkvSCo4yw8PW-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="La70J7QoOkvSCo4yw8PW-7" target="Mpkx7S8dqKNba20j9ynK-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-7" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Si &lt;code style=&quot;&quot;&gt;arr[milieu]&lt;/code&gt;&lt;/font&gt;&lt;div&gt;&lt;code&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp;== x&lt;/font&gt;&lt;/code&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="228.75" width="160" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="La70J7QoOkvSCo4yw8PW-9" target="La70J7QoOkvSCo4yw8PW-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-9" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Afficher &#39;Élément trouvé à l&#39;indice &lt;code&gt;milieu&lt;/code&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="246.88" width="140" height="88.75" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-11" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Fin&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" y="430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="La70J7QoOkvSCo4yw8PW-16" target="Mpkx7S8dqKNba20j9ynK-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-16" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;gauche = &lt;code&gt;milieu + 1&lt;/code&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="510" y="415" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="La70J7QoOkvSCo4yw8PW-20" target="Mpkx7S8dqKNba20j9ynK-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-20" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Sinon : droite = &lt;code&gt;milieu - 1&lt;/code&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="510" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-29" value="&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;strong&gt;Début :&lt;/strong&gt; L&#39;algorithme commence ici.&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Initialisation :&lt;/strong&gt; Définir le tableau trié &lt;code&gt;arr&lt;/code&gt;, l&#39;élément à rechercher &lt;code&gt;x&lt;/code&gt;, et les indices &lt;code&gt;gauche&lt;/code&gt; (index de début) et &lt;code&gt;droite&lt;/code&gt; (index de fin).&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Boucle :&lt;/strong&gt; Tant que &lt;code&gt;gauche ≤ droite&lt;/code&gt; :&lt;/font&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Calculer Milieu :&lt;/strong&gt; &lt;code&gt;milieu = (gauche + droite) // 2&lt;/code&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;3&quot;&gt;Condition de Milieu :&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Si &lt;/strong&gt;&lt;code&gt;arr[milieu] == x&lt;/code&gt;&lt;strong&gt; :&lt;/strong&gt; L&#39;élément est trouvé à l&#39;indice &lt;code&gt;milieu&lt;/code&gt;.&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Sinon, si &lt;/strong&gt;&lt;code&gt;arr[milieu] &amp;lt; x&lt;/code&gt;&lt;strong&gt; :&lt;/strong&gt; Mettre à jour &lt;code&gt;gauche = milieu + 1&lt;/code&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Sinon :&lt;/strong&gt; Mettre à jour &lt;code&gt;droite = milieu - 1&lt;/code&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Fin de la Boucle :&lt;/strong&gt; Si l&#39;élément n&#39;est pas trouvé après avoir parcouru le tableau, ajouter un cercle pour afficher &quot;Élément non trouvé&quot;.&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;font size=&quot;3&quot;&gt;&lt;strong&gt;Fin :&lt;/strong&gt; L&#39;algorithme se termine ici.&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="920" width="600" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="La70J7QoOkvSCo4yw8PW-30" value="&lt;b&gt;&lt;i&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Algo binaire&amp;nbsp;&lt;/font&gt;&lt;/i&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="660" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-9" value="element non trouvé" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="670" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Mpkx7S8dqKNba20j9ynK-11" target="La70J7QoOkvSCo4yw8PW-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-11" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Tant que&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;G&lt;code&gt;auche&lt;/code&gt;&amp;nbsp;&amp;lt;= D&lt;code&gt;roite&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;code&gt;(boucle)&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="32" width="220" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Mpkx7S8dqKNba20j9ynK-15" target="La70J7QoOkvSCo4yw8PW-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Mpkx7S8dqKNba20j9ynK-15" target="Mpkx7S8dqKNba20j9ynK-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-15" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Sinon Si&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;array [millieu]&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;lt; x&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="380" width="140" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-20" value="retour a la boucle&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="682.5" y="405" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Mpkx7S8dqKNba20j9ynK-22" target="La70J7QoOkvSCo4yw8PW-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Mpkx7S8dqKNba20j9ynK-22" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Sinon Si&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;array [millieu]&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;gt; x&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="560" width="140" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
