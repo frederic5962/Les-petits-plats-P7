@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Fonction de recherche principale
   function performMainSearch(searchTerm, exactMatch = false) {
+      // Vérifie la longueur de l'entrée
+  if (searchTerm.length < 3) {
+    resetSearchResults();
+    return;
+  }
     let searchResults = filterRecipesByTags(recipes, selectedTags);
     searchResults = searchResults.filter(recipe => {
       const nameMatch = exactMatch
